@@ -1,0 +1,29 @@
+<div *ngIf="showMsg">
+  {{msg}}
+</div>
+
+<form #clienteForm="ngForm">
+  <input [(ngModel)]="cliente.clieId" #clieId id="clieId" 
+  name="clieId" placeholder="Identificación"><br/>
+
+  <select name="tdocId" #tdocId  id="tdocId" [(ngModel)]="cliente.tdocId">
+    <option *ngFor="let tipoDocumento of listaTipoDocumento" [value]="tipoDocumento.tdocId">
+      {{tipoDocumento.tdocId}} - {{tipoDocumento.nombre}}
+    </option>
+  </select><br>
+  <input [(ngModel)]="cliente.nombre" #nombre id="nombre" name="nombre" placeholder="Nombre"><br>
+  <input [(ngModel)]="cliente.direccion" #direccion id="direccion" name="clieId" placeholder="Dirección"><br>
+  <input [(ngModel)]="cliente.telefono" #telefono id="telefono" name="telefono" placeholder="Telefono"><br>
+  <input [(ngModel)]="cliente.email" #email id="email" name="email" placeholder="email@email.com"><br>
+  
+  
+  <select name="activo" #activo  id="activo" [(ngModel)]="cliente.activo">
+      <option *ngFor="let activo of listaActivo" [value]="activo.id">
+        {{activo.id}} - {{activo.nombre}}
+      </option>
+  </select><br>
+
+    <button (click)="save()" class="btn btn-success">Grabar</button>
+    <button routerLink="/cliente-list" class="btn btn-danger">Cancelar</button>
+  
+</form>

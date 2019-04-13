@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Usuario</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Activo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of listaUsuarios">
+      <th scope="row">{{usuario.usuUsuario}}</th>
+      <td>{{usuario.nombre}}</td>
+      <td>{{usuario.identificacion}}</td>
+      <td>{{usuario.activo}}</td>
+    </tr>
+   
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<div *ngIf="showMsg">
+  {{msg}}
+</div>
+
+<form #usuarioForm="ngForm">
+
+  <input [(ngModel)]="usuario.usuUsuario" type="text" name="usuUsuario" #usuUsuario id="usuUsuario" placeholder="Usuario"><br>
+  <input [(ngModel)]="usuario.clave" name="clave" #clave id="clave" type="password" placeholder="Contraseña"><br>
+  <select name="tiusId" #tiusId  id="tiusId" [(ngModel)]="selectedOption">
+    <option *ngFor="let tipoUsuario of listaTipoUsuario" [value]="tipoUsuario.tiusId">
+      {{tipoUsuario.nombre}}
+    </option>
+  </select>value tius {{selectedOption}}
+  <br>
+  <button (click)="getTipoUsuarioId()">OLI</button>
+
+
+
+
+  
+  <input [(ngModel)]="usuario.identificacion" name="identificacion" #identificacion id="identificacion" placeholder="Identificacion"><br>
+  <input [(ngModel)]="usuario.nombre" name="nombre" #nombre id="nombre" type="text" placeholder="Nombre"><br>
+  <select [(ngModel)]="usuario.activo" name="activo" #activo id="activo">
+    <option *ngFor="let activo of listaActivo" [value]="activo.id">
+      {{activo.id}} - {{activo.nombre}}
+    </option>
+  </select><br>
+  <button (click)="save()">Guardar</button>
+  <button routerLink="/usuario-list">Cancelar</button>
+</form>

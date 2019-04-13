@@ -1,0 +1,16 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id Cliente</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>  
+  <tbody>
+    <tr *ngFor="let cliente of listaClientes">
+      <th scope="row">{{cliente.clieId}}</th>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.email}}</td>
+      </tr>
+  </tbody>
+</table>

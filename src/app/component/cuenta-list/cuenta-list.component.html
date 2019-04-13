@@ -1,0 +1,17 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id cuenta</th>
+      <th scope="col">Saldo</th>
+      <th scope="col">Activa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cuenta of listaCuentas">
+      <th scope="row">{{cuenta.cuenId}}</th>
+      <td>{{cuenta.saldo}}</td>
+      <td>{{cuenta.activa}} </td>
+      </tr>
+  </tbody>
+</table>
+
