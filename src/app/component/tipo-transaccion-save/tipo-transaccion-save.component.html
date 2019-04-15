@@ -1,0 +1,24 @@
+<div *ngIf="showMsg" class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+
+<div class="container">
+  <form #tipoTransaccionForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre Tipo de Transacción</label>
+      <input class="form-control" [(ngModel)]="tipoTransaccion.nombre" type="text" #nombre id="nombre" name="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="activo">Estado del Tipo de Transacción</label>
+      <select class="form-control" name="activo" #activo id="activo" [(ngModel)]="tipoTransaccion.activo">
+        <option *ngFor="let activo of listaActivo" [value]="activo.id">
+          {{activo.id}} - {{activo.nombre}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-primary col-md-6" (click)="save()">Guardar</button>
+      <button class="btn btn-danger col-md-6" routerLink="/tipo-transaccion-list">Cancelarr</button>
+    </div>
+  </form>
+</div>

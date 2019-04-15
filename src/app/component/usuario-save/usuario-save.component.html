@@ -1,30 +1,49 @@
-<div *ngIf="showMsg">
-  {{msg}}
+<div class="container">
+  <div *ngIf="showMsg" class="alert alert-success" role="alert">
+    {{msg}}
+  </div>
+
+  <form #usuarioForm="ngForm" class="form-horizontal">
+    <div class="form-group col-md-6 col-lg col-sm-12 mt-4">
+      <label for="nombre">Nombre</label>
+      <input [(ngModel)]="usuario.usuUsuario" class="form-control" type="text" name="usuUsuario" #usuUsuario
+        id="usuUsuario" placeholder="Usuario">
+    </div>
+    <div class="form-group col-md-6 col-lg col-sm-12">
+      <label for="clave">Contraseña</label>
+      <input [(ngModel)]="usuario.clave" class="form-control" name="clave" #clave id="clave" type="password"
+        placeholder="Contraseña">
+    </div>
+    <div class="form-group col-md-6 col-lg col-sm-12">
+      <label for="tipoUsuario">Tipo de Usuario</label>
+      <select class="form-control" name="tiusId" #tiusId id="tiusId"
+        [(ngModel)]="usuario.tiusId">
+        <option *ngFor="let tipoUsuario of listaTipoUsuario" [value]="tipoUsuario.tiusId">
+          {{tipoUsuario.tiusId}} {{tipoUsuario.nombre}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-md-6 col-lg col-sm-12 pt-2">
+      <label for="identificacion">Identificacion</label>
+      <input [(ngModel)]="usuario.identificacion" class="form-control" name="identificacion" #identificacion
+        id="identificacion" placeholder="Ej: 50">
+    </div>
+    <div class="form-group col-md-6 col-lg col-sm-12 pt-2">
+      <label for="nombre">Nombre</label>
+      <input [(ngModel)]="usuario.nombre" class="form-control" name="nombre" #nombre id="nombre" type="text"
+        placeholder="Nombre"><br>
+    </div>
+    <div class="form-group col-md-6 col-lg col-sm-12">
+      <label for="activo">Usuario activo</label>
+      <select [(ngModel)]="usuario.activo" class="form-control" name="activo" #activo id="activo">
+        <option *ngFor="let activo of listaActivo" [value]="activo.id">
+          {{activo.id}} - {{activo.nombre}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button class="col-md-6 btn btn-primary" (click)="save()">Guardar</button>
+      <button class="col-md-6 btn btn-danger" routerLink="/usuario-list">Cancelar</button>
+    </div>
+  </form>
 </div>
-
-<form #usuarioForm="ngForm">
-
-  <input [(ngModel)]="usuario.usuUsuario" type="text" name="usuUsuario" #usuUsuario id="usuUsuario" placeholder="Usuario"><br>
-  <input [(ngModel)]="usuario.clave" name="clave" #clave id="clave" type="password" placeholder="Contraseña"><br>
-  <select name="tiusId" #tiusId  id="tiusId" [(ngModel)]="selectedOption">
-    <option *ngFor="let tipoUsuario of listaTipoUsuario" [value]="tipoUsuario.tiusId">
-      {{tipoUsuario.nombre}}
-    </option>
-  </select>value tius {{selectedOption}}
-  <br>
-  <button (click)="getTipoUsuarioId()">OLI</button>
-
-
-
-
-  
-  <input [(ngModel)]="usuario.identificacion" name="identificacion" #identificacion id="identificacion" placeholder="Identificacion"><br>
-  <input [(ngModel)]="usuario.nombre" name="nombre" #nombre id="nombre" type="text" placeholder="Nombre"><br>
-  <select [(ngModel)]="usuario.activo" name="activo" #activo id="activo">
-    <option *ngFor="let activo of listaActivo" [value]="activo.id">
-      {{activo.id}} - {{activo.nombre}}
-    </option>
-  </select><br>
-  <button (click)="save()">Guardar</button>
-  <button routerLink="/usuario-list">Cancelar</button>
-</form>

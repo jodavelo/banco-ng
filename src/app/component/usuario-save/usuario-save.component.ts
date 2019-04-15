@@ -31,7 +31,7 @@ export class UsuarioSaveComponent implements OnInit {
     this.selectedOption = 1;
     this.getTipoUsuarioId();
     this.tipoUsuarioSeleccionado = this.getTipoUsuarioId();
-    this.usuario = new Usuario("", "S", "", 0, "", this.tipoUsuarioSeleccionado);
+    this.usuario = new Usuario("", "S", "", 0, "", 0);
     
     this.getListaActivo();
     this.getListaTipoUsuario();

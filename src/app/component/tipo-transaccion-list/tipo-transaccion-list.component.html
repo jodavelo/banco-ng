@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Tipo Transacción</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipoTransaccion of listaTipoTransacciones">
+        <th scope="row">{{tipoTransaccion.titrId}}</th>
+        <td>{{tipoTransaccion.nombre}}</td>
+        <td>{{tipoTransaccion.activo}} </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

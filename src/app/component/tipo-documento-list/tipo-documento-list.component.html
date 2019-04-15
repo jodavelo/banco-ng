@@ -1,17 +1,19 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id tipo documento</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Activo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tipo_documento of listaTiposDocumentos">
-      <th scope="row">{{tipo_documento.tdocId}}</th>
-      <td>{{tipo_documento.nombre}} </td>
-      <td>{{tipo_documento.activo}}</td>
-    </tr>
-   
-  </tbody>
-</table>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id tipo documento</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipo_documento of listaTiposDocumentos">
+        <th scope="row">{{tipo_documento.tdocId}}</th>
+        <td>{{tipo_documento.nombre}} </td>
+        <td>{{tipo_documento.activo}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

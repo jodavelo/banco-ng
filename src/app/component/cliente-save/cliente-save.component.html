@@ -1,29 +1,55 @@
-<div *ngIf="showMsg">
+<div *ngIf="showMsg" class="alert alert-success" role="alert">
   {{msg}}
 </div>
 
-<form #clienteForm="ngForm">
-  <input [(ngModel)]="cliente.clieId" #clieId id="clieId" 
-  name="clieId" placeholder="Identificación"><br/>
+<div class="container">
+  <form #clienteForm="ngForm">
+    <div class="form-group">
+      <label for="clieId">Id del Cliente</label>
+      <input class="form-control" [(ngModel)]="cliente.clieId" #clieId id="clieId" name="clieId"
+        placeholder="Ej: 7070">
+    </div>
 
-  <select name="tdocId" #tdocId  id="tdocId" [(ngModel)]="cliente.tdocId">
-    <option *ngFor="let tipoDocumento of listaTipoDocumento" [value]="tipoDocumento.tdocId">
-      {{tipoDocumento.tdocId}} - {{tipoDocumento.nombre}}
-    </option>
-  </select><br>
-  <input [(ngModel)]="cliente.nombre" #nombre id="nombre" name="nombre" placeholder="Nombre"><br>
-  <input [(ngModel)]="cliente.direccion" #direccion id="direccion" name="clieId" placeholder="Dirección"><br>
-  <input [(ngModel)]="cliente.telefono" #telefono id="telefono" name="telefono" placeholder="Telefono"><br>
-  <input [(ngModel)]="cliente.email" #email id="email" name="email" placeholder="email@email.com"><br>
-  
-  
-  <select name="activo" #activo  id="activo" [(ngModel)]="cliente.activo">
-      <option *ngFor="let activo of listaActivo" [value]="activo.id">
-        {{activo.id}} - {{activo.nombre}}
-      </option>
-  </select><br>
+    <div class="form-group">
+      <label for="tdocId">Tipo de Documento</label>
+      <select class="form-control" name="tdocId" #tdocId id="tdocId" [(ngModel)]="cliente.tdocId">
+        <option *ngFor="let tipoDocumento of listaTipoDocumento" [value]="tipoDocumento.tdocId">
+          {{tipoDocumento.tdocId}} - {{tipoDocumento.nombre}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input class="form-control" [(ngModel)]="cliente.nombre" #nombre id="nombre" name="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="direccion">Dirección</label>
+      <input class="form-control" [(ngModel)]="cliente.direccion" #direccion id="direccion" name="clieId"
+        placeholder="Dirección">
+    </div>
+    <div class="form-group">
+      <label for="telefono">Telefono</label>
+      <input class="form-control" [(ngModel)]="cliente.telefono" #telefono id="telefono" name="telefono"
+        placeholder="Telefono">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" [(ngModel)]="cliente.email" #email id="email" name="email"
+        placeholder="email@email.com">
+    </div>
+    <div class="form-group">
+      <label for="activo">Cliente Activo</label>
+      <select class="form-control" name="activo" #activo id="activo" [(ngModel)]="cliente.activo">
+        <option *ngFor="let activo of listaActivo" [value]="activo.id">
+          {{activo.id}} - {{activo.nombre}}
+        </option>
+      </select>
+    </div>
 
-    <button (click)="save()" class="btn btn-success">Grabar</button>
-    <button routerLink="/cliente-list" class="btn btn-danger">Cancelar</button>
-  
-</form>
+    <div class="mb-4">
+      <button (click)="save()" class="btn btn-primary col-md-6">Grabar</button>
+      <button routerLink="/cliente-list" class="btn btn-danger col-md-6">Cancelar</button>
+    </div>
+
+  </form>
+</div>

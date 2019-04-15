@@ -12,6 +12,13 @@ import { TipoUsuarioListComponent } from './component/tipo-usuario-list/tipo-usu
 import { FormsModule } from "@angular/forms";
 import { ClienteSaveComponent } from './component/cliente-save/cliente-save.component';
 import { UsuarioSaveComponent } from './component/usuario-save/usuario-save.component';
+import { TipoDocumentoSaveComponent } from './component/tipo-documento-save/tipo-documento-save.component';
+import { TipoTransaccionListComponent } from './component/tipo-transaccion-list/tipo-transaccion-list.component';
+import { TipoTransaccionSaveComponent } from './component/tipo-transaccion-save/tipo-transaccion-save.component';
+import { TipoUsuarioSaveComponent } from './component/tipo-usuario-save/tipo-usuario-save.component';
+import { CuentaSaveComponent } from './component/cuenta-save/cuenta-save.component';
+import { MainNavbarComponent } from './main-navbar/main-navbar.component';
+import { ClienteDeleteComponent } from './component/cliente-delete/cliente-delete.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { UsuarioSaveComponent } from './component/usuario-save/usuario-save.comp
     TipoDocumentoListComponent,
     TipoUsuarioListComponent,
     ClienteSaveComponent,
-    UsuarioSaveComponent
+    UsuarioSaveComponent,
+    TipoDocumentoSaveComponent,
+    TipoTransaccionListComponent,
+    TipoTransaccionSaveComponent,
+    TipoUsuarioSaveComponent,
+    CuentaSaveComponent,
+    MainNavbarComponent,
+    ClienteDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<div *ngIf="showMsg" class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+
+<div class="container">
+  <form #tipoUsuarioForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input [(ngModel)]="tipoUsuario.nombre" class="form-control" type="text" id="mombre" name="nombre" #nombre
+        placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="activo">Estado del Tipo de Usuario</label>
+      <select class="form-control" name="activo" id="activo" #activo [(ngModel)]="tipoUsuario.activo">
+        <option *ngFor="let activo of listaActivo" [value]="activo.id">
+          {{activo.id}} - {{activo.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <button class="btn btn-primary col-md-6" (click)="save()">Guardar</button>
+      <a href="/tipo-usuario-list" class="btn btn-danger col-md-6">Cancelar</a>
+    </div>
+  </form>
+</div>

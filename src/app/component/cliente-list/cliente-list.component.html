@@ -1,16 +1,24 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id Cliente</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>  
-  <tbody>
-    <tr *ngFor="let cliente of listaClientes">
-      <th scope="row">{{cliente.clieId}}</th>
-      <td>{{cliente.nombre}}</td>
-      <td>{{cliente.email}}</td>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Cliente</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Opciones</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of listaClientes">
+        <th scope="row">{{cliente.clieId}}</th>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.email}}</td>
+        <td>
+          <button class="btn btn-warning col-md-6">Modificar</button>
+          
+          <app-cliente-delete></app-cliente-delete>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

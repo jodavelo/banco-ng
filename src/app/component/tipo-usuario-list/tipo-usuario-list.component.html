@@ -1,17 +1,19 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id tipo usuario</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Activo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tipo_usuario of listaTipoUsuarios">
-      <th scope="row">{{tipo_usuario.tiusId}}</th>
-      <td>{{tipo_usuario.nombre}} </td>
-      <td>{{tipo_usuario.activo}}</td>
-    </tr>
-   
-  </tbody>
-</table>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id tipo usuario</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipo_usuario of listaTipoUsuarios">
+        <th scope="row">{{tipo_usuario.tiusId}}</th>
+        <td>{{tipo_usuario.nombre}} </td>
+        <td>{{tipo_usuario.activo}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
