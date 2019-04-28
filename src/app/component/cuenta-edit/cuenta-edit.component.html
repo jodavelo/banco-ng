@@ -1,0 +1,41 @@
+<div *ngIf="showMsg" class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+
+<div class="container">
+  <form #cuentaForm="ngForm">
+    <div class="form-group">
+      <label for="cuenId">Numero de Cuenta</label>
+      <input disabled type="text" class="form-control" [(ngModel)]="cuenta.cuenId" #cuenId id="cuenId" name="cuenId"
+        placeholder="Ej: xxxx-xxxx-xxxx-xxxx">
+    </div>
+    <div class="form-group">
+      <label for="activa">Estado de la Cuenta</label>
+      <select class="form-control" name="activa" #activa id="activa" [(ngModel)]="cuenta.activa">
+        <option *ngFor="let activa of listaActivo" [value]="activa.id">
+          {{activa.id}} - {{activa.nombre}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="clave">Clave</label>
+      <input type="password" class="form-control" [(ngModel)]="cuenta.clave" #clave id="clave" name="clave"
+        placeholder="Clave">
+    </div>
+    <div class="form-group">
+      <label for="saldo">Saldo</label>
+      <input type="text" class="form-control" [(ngModel)]="cuenta.saldo" #saldo id="saldo" name="saldo"
+        placeholder="Saldo">
+    </div>
+    <div class="form-group">
+      <label for="clieId">Id del Cliente</label>
+      <input type="text" class="form-control" [(ngModel)]="cuenta.clieId" #clieId id="clieId" name="clieId"
+        placeholder="Ej: 50">
+    </div>
+
+    <div>
+      <button class="col-md-6 btn btn-primary" (click)="update()">Guardar</button>
+      <button class="col-md-6 btn btn-danger" routerLink="/cuenta-list">Cancelar</button>
+    </div>
+  </form>
+</div>

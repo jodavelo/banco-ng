@@ -23,4 +23,13 @@ export class UsuarioListComponent implements OnInit {
     })
   }
 
+  delete(usuario:Usuario){
+    this.usuarioService.delete(usuario.usuUsuario).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getUsuarios();
+    }, error=>{
+      console.log(error.error.mensaje);
+    });
+  }
+
 }

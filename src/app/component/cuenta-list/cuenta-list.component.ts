@@ -23,4 +23,13 @@ export class CuentaListComponent implements OnInit {
     })
   }
 
+  delete(cuenta:Cuenta){
+    this.cuentaService.delete(""+cuenta.cuenId).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getCuentas;
+    }, error=>{
+      console.log(error.error.mensaje);
+    });
+  }
+
 }

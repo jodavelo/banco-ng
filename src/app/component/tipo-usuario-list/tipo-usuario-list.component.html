@@ -5,6 +5,7 @@
         <th scope="col">Id tipo usuario</th>
         <th scope="col">Nombre</th>
         <th scope="col">Activo</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,10 @@
         <th scope="row">{{tipo_usuario.tiusId}}</th>
         <td>{{tipo_usuario.nombre}} </td>
         <td>{{tipo_usuario.activo}}</td>
+        <td>
+          <button [routerLink]="['/tipo-usuario-edit', tipo_usuario.tiusId]" class="btn btn-warning col-md-6">Modificar</button>
+          <button (click)="delete(tipo_usuario)" class="btn btn-danger col-md-6">Eliminar</button>
+        </td>
       </tr>
 
     </tbody>

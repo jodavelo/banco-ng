@@ -5,6 +5,7 @@
         <th scope="col">Id tipo documento</th>
         <th scope="col">Nombre</th>
         <th scope="col">Activo</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,10 @@
         <th scope="row">{{tipo_documento.tdocId}}</th>
         <td>{{tipo_documento.nombre}} </td>
         <td>{{tipo_documento.activo}}</td>
+        <td>
+          <button [routerLink]="['/tipo-documento-edit', tipo_documento.tdocId]" class="col-md-6 btn btn-warning">Modificar</button>
+          <button (click)="delete(tipo_documento)" class="col-md-6 btn btn-danger">Eliminar</button>
+        </td>
       </tr>
 
     </tbody>

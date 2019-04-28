@@ -6,7 +6,8 @@
   <form #tipoTransaccionForm="ngForm">
     <div class="form-group">
       <label for="nombre">Nombre Tipo de Transacción</label>
-      <input class="form-control" [(ngModel)]="tipoTransaccion.nombre" type="text" #nombre id="nombre" name="nombre" placeholder="Nombre">
+      <input class="form-control" [(ngModel)]="tipoTransaccion.nombre" type="text" #nombre id="nombre" name="nombre"
+        placeholder="Nombre">
     </div>
     <div class="form-group">
       <label for="activo">Estado del Tipo de Transacción</label>
@@ -17,7 +18,7 @@
       </select>
     </div>
     <div>
-      <button class="btn btn-primary col-md-6" (click)="save()">Guardar</button>
+      <button class="btn btn-primary col-md-6" (click)="update()">Guardar</button>
       <button class="btn btn-danger col-md-6" routerLink="/tipo-transaccion-list">Cancelar</button>
     </div>
   </form>

@@ -22,7 +22,7 @@ export class ClienteDeleteComponent implements OnInit {
 
   delete() {
     console.log(this.cliente);
-    this.clienteService.delete(this.cliente).subscribe(data => {
+    this.clienteService.delete(""+this.cliente).subscribe(data => {
       this.showMsg = true;
       this.msg = data.mensaje;
     }, error => {

@@ -10,6 +10,7 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class ClienteListComponent implements OnInit {
 
   public listaClientes:Cliente[];
+  public cliente:Cliente;
 
   //todo se inyecta por el constructor
   constructor(public clienteService:ClienteService) { }
@@ -23,6 +24,16 @@ export class ClienteListComponent implements OnInit {
 
       this.listaClientes=resultado;
     });
+  }
+
+  borrar(cliente:Cliente){
+    
+    this.clienteService.delete(""+cliente.clieId).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getClientes();
+    },error=>{
+      console.log(error.error.mensaje);
+    })
   }
 
 }

@@ -23,4 +23,13 @@ export class TipoDocumentoListComponent implements OnInit {
     })
   }
 
+  delete(tipoDocumento:TipoDocumento){
+    this.tipoDocumentoService.delete(""+tipoDocumento.tdocId).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getTiposDocumentos();
+    }, error=>{
+      console.log(error.error.mensaje);
+    });
+  }
+
 }

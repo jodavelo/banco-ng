@@ -1,8 +1,8 @@
 export class TipoTransaccion {
     constructor(
-        titrId:number,
-        activo:string,
-        nombre:string
+        public titrId:number,
+        public activo:string,
+        public nombre:string
     ){}
 }
 

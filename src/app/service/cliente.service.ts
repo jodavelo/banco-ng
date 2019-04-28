@@ -26,7 +26,7 @@ export class ClienteService {
     return this.httpClient.put(this.url, cliente);
   }
 
-  delete(id:Cliente):Observable<any>{
+  delete(id:string):Observable<any>{
     return this.httpClient.delete(this.url+id);
   }
 

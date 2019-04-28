@@ -9,9 +9,13 @@ import { TipoTransaccionService } from 'src/app/service/tipo-transaccion.service
 })
 export class TipoTransaccionListComponent implements OnInit {
 
+  public id:number;
+
   public listaTipoTransacciones:TipoTransaccion[];
 
-  constructor(public tipoTransaccionService:TipoTransaccionService) { }
+  constructor(
+    public tipoTransaccionService:TipoTransaccionService
+  ) { }
 
   ngOnInit() {
     this.getTipoTransacciones();
@@ -20,6 +24,15 @@ export class TipoTransaccionListComponent implements OnInit {
   getTipoTransacciones(){
     this.tipoTransaccionService.findAll().subscribe(resultado=>{
       this.listaTipoTransacciones = resultado;
+    });
+  }
+
+  delete(tipoTransaccion:TipoTransaccion){
+    this.tipoTransaccionService.delete(""+tipoTransaccion.titrId).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getTipoTransacciones();
+    }, error=>{
+      console.log(error.error.mensaje);
     });
   }
 

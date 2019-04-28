@@ -19,6 +19,12 @@ import { TipoUsuarioSaveComponent } from './component/tipo-usuario-save/tipo-usu
 import { CuentaSaveComponent } from './component/cuenta-save/cuenta-save.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { ClienteDeleteComponent } from './component/cliente-delete/cliente-delete.component';
+import { ClienteEditComponent } from './component/cliente-edit/cliente-edit.component';
+import { CuentaEditComponent } from './component/cuenta-edit/cuenta-edit.component';
+import { TipoDocumentoEditComponent } from './component/tipo-documento-edit/tipo-documento-edit.component';
+import { TipoTransaccionEditComponent } from './component/tipo-transaccion-edit/tipo-transaccion-edit.component';
+import { TipoUsuarioEditComponent } from './component/tipo-usuario-edit/tipo-usuario-edit.component';
+import { UsuarioEditComponent } from './component/usuario-edit/usuario-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,13 @@ import { ClienteDeleteComponent } from './component/cliente-delete/cliente-delet
     TipoUsuarioSaveComponent,
     CuentaSaveComponent,
     MainNavbarComponent,
-    ClienteDeleteComponent
+    ClienteDeleteComponent,
+    ClienteEditComponent,
+    CuentaEditComponent,
+    TipoDocumentoEditComponent,
+    TipoTransaccionEditComponent,
+    TipoUsuarioEditComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

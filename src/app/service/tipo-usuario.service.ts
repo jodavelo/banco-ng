@@ -19,4 +19,16 @@ export class TipoUsuarioService {
   save(tipoUsuario:TipoUsuario):Observable<any>{
     return this.httpClient.post(this.url, tipoUsuario);
   }
+
+  update(tipoUsuario:TipoUsuario):Observable<any>{
+    return this.httpClient.put(this.url, tipoUsuario);
+  }
+
+  delete(id:string):Observable<any>{
+    return this.httpClient.delete(this.url+id);
+  }
+
+  findById(id:string):Observable<any>{
+    return this.httpClient.get(this.url+id);
+  }
 }

@@ -5,6 +5,7 @@
         <th scope="col">Id Cliente</th>
         <th scope="col">Nombre</th>
         <th scope="col">Email</th>
+        <th scope="col">Dirección</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
@@ -13,10 +14,10 @@
         <th scope="row">{{cliente.clieId}}</th>
         <td>{{cliente.nombre}}</td>
         <td>{{cliente.email}}</td>
+        <td>{{cliente.direccion}}</td>
         <td>
-          <button class="btn btn-warning col-md-6">Modificar</button>
-          
-          <app-cliente-delete></app-cliente-delete>
+          <button [routerLink]="['/cliente-edit', cliente.clieId]" class="btn btn-warning col-md-6">Modificar</button>
+          <button (click)="borrar(cliente)" class="btn btn-danger col-md-6">Eliminar</button>
         </td>
       </tr>
     </tbody>

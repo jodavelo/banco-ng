@@ -23,4 +23,13 @@ export class TipoUsuarioListComponent implements OnInit {
     })
   }
 
+  delete(tipoUsuario:TipoUsuario){
+    this.tipoUsuarioService.delete(""+tipoUsuario.tiusId).subscribe(data=>{
+      console.log(data.mensaje);
+      this.getTipoUsuario();
+    }, error=>{
+      console.log(error.error.mensaje);
+    });
+  }
+
 }
